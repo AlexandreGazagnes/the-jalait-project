@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "the-jalait-project"
 version = "0.1.0"
-description = ""
+description = "Just Another Learning AI Tool"
 authors = ["AlexGazagnes"]
 license = "GNU GPLv3"
 readme = "README.md"
