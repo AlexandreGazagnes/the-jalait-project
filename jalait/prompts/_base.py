@@ -227,3 +227,67 @@ class InsightBasePrompt(BasePrompt):
         user_message = user_message.replace("--INSIGHT_DATA--", self.insight)
 
         return user_message
+
+
+class AnalyseBasePrompt(BasePrompt):
+    """ """
+
+    def __init__(
+        self,
+        input: str,
+        output: str,
+        insight: str,
+        system_message_template: str = None,
+        user_message_template: str = None,
+        user_delimiter: str = None,
+        insight_delimiter: str = None,
+    ) -> None:
+        """ """
+
+        # logging.info("InsightBasePrompt ==>  __init__ CALLED")
+
+        super().__init__(
+            data=None,
+            insight=insight,
+            system_message_template=system_message_template,
+            user_message_template=user_message_template,
+            user_delimiter=user_delimiter,
+            insight_delimiter=insight_delimiter,
+            prompt_type="insight",
+        )
+        self.input = input
+        self.output = output
+
+    def _build_system_message(self):
+        """build system message from template and data"""
+
+        # logging.info("InsightBasePrompt => _build_system_message => CALLED")
+
+        # logging.info(f"self.system_message_template : {self.system_message_template}")
+
+        system_message = self.system_message_template.replace(
+            "--USER_DELIMITER--", self.user_delimiter
+        ).replace("--INSIGHT_DELIMITER--", self.insight_delimiter)
+
+        system_message = system_message.replace("\n\n", "\n").replace("\n\n", "\n")
+
+        return system_message
+
+    def _build_user_message(self):
+        """build messages"""
+
+        # logging.info("InsightBasePrompt => _build_user_message => CALLED")
+
+        user_message = str(self.user_message_template)
+        user_message = (
+            user_message.replace("--INPUT--", str(self.input))
+            .replace("--OUTPUT--", str(self.output))
+            .replace("--USER_DELIMITER--", self.user_delimiter)
+        )
+
+        user_message = user_message.replace(
+            "--INSIGHT_DELIMITER--", self.insight_delimiter
+        )
+        user_message = user_message.replace("--INSIGHT_DATA--", self.insight)
+
+        return user_message

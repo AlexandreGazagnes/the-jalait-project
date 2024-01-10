@@ -9,9 +9,9 @@ class Input:
     lang_level = {
         "label": "📢 Language Level",
         "options": [
-            "1 - slang or casual",
-            "2 - normal or usual",
-            "3 - sustained or formal",
+            "slang or casual",
+            "normal or usual",
+            "sustained or formal",
         ],
     }
 
@@ -19,8 +19,8 @@ class Input:
         "label": "🌏 Country",
         "options": [
             "-",
-            "United States of America",
-            "United Kindom",
+            "American",
+            "British",
             "*beta* - Ireland",
             "*beta* - Australia",
             "*beta* - Canada",

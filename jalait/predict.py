@@ -8,7 +8,6 @@ import time
 
 from openai import OpenAI
 
-client = OpenAI()
 import pandas as pd
 
 from jalait.prompts import InsightPromt, BasicPromt
@@ -52,6 +51,7 @@ def completion_from_messages(
         )
 
     # request
+    client = OpenAI(api_key=api_key)
     response = client.chat.completions.create(
         model=model,
         messages=messages,
