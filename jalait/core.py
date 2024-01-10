@@ -15,11 +15,12 @@ class Jalait:
     def __init__(
         self,
         input_text: str,
-        lang_level: str,
-        lang_country: str,
-        fix_text: bool,
-        grammar: bool,
-        audio: bool,
+        lang_level: str = "Standard or daily",
+        lang_country: str = "American",
+        fix_text: bool = True,
+        grammar: bool = True,
+        audio: bool = False,
+        idioms: bool = False,
     ) -> None:
         """ """
         self.input_text = input_text
@@ -28,7 +29,7 @@ class Jalait:
         self.fix_text = fix_text
         self.grammar = grammar
         self.audio = audio
-        self.idioms = False
+        self.idioms = idioms
 
     def run(self):
         # env
