@@ -1,3 +1,9 @@
+# 2024-01-10 - 0.2.0 - True implementation of LLM
+
+## Update 
+- [x] LLM implementation
+
+
 # 2024-01-10 - 0.1.0 - First Public Release
 
 ## Update 
