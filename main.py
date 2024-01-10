@@ -51,6 +51,10 @@ if st.button("Submit"):
         audio,
     )
 
-    out = jalait.run()
+    out = jalait.fix()
 
-    st.text(out)
+    st.text_area("Your answer", value=out)
+
+    if grammar:
+        more = jalait.analyze()
+        st.text_area("Grammar Analysis", more)
