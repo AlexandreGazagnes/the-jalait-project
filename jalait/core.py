@@ -30,11 +30,13 @@ class Jalait:
         self.grammar = grammar
         self.audio = audio
         self.idioms = idioms
+        self.output = ""
+        self.analysis = ""
 
-    def run(self):
-        # env
-        config = manage_env()
+        self.config = config = manage_env()
+        self.api_key = config.get("OPENAI_API_KEY", "Error")
 
+    def fix(self):
         # insight
         insight = ""
         if self.lang_level != "-":
@@ -44,12 +46,32 @@ class Jalait:
         if self.idioms:
             insight += f"Do not hesitate to use specific {self.lang_country} idioms, in accordance to the {self.lang_level} level of language expected. \n"
 
+        self.insight = insight
+
         # prompt
         prompt = Prompts.Insight(self.input_text, insight)
 
         # completion
         output = completion_from_messages(
             prompt.dictize(),
-            api_key=config["OPENAI_API_KEY"],
+            api_key=self.api_key,
         )
+
+        self.output = output
+
         return output
+
+    def analyze(self):
+        """ """
+
+        prompt = Prompts.Analyze(self.input_text, self.output, self.insight)
+
+        # completion
+        analysis = completion_from_messages(
+            prompt.dictize(),
+            api_key=self.api_key,
+        )
+
+        self.analysis = analysis
+
+        return analysis
