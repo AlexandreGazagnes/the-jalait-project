@@ -1,0 +1,16 @@
+pandas==2.1.4
+fastapi==0.108.0
+uvicorn==0.25.0
+sqlalchemy==2.0.25
+requests==2.31.0
+openai==1.6.1
+python-dotenv==1.0.0
+pyscopg2==66.0.2
+httpx==0.26.0
+pandarallel==1.6.5
+transformers==4.36.2
+pytest==7.4.4
+# tensorflow==2.0
+pytube==15.0.0
+youtube-transcript-api==0.6.2
+streamlit==1.29.0
