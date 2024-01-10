@@ -6,10 +6,13 @@ import os
 import logging
 import time
 
-import openai
+from openai import OpenAI
+
+client = OpenAI()
 import pandas as pd
 
-from jalait.prompts import prompts
+from jalait.prompts import InsightPromt, BasicPromt
+from jalait.prompts import Prompts
 from .prompts._base import BasePrompt
 
 
@@ -49,37 +52,11 @@ def completion_from_messages(
         )
 
     # request
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model=model,
         messages=messages,
         temperature=temperature,
-        api_key=api_key,
+        # api_key=api_key
     )
 
-    output = response.choices[0].message["content"]
-
-    return output
-
-
-# if __name__ == "__main__":
-#     """ """
-
-#     # logging
-#     logging.basicConfig(level=logging.INFO)
-
-#     # env
-#     config = manage_env()
-
-#     # data
-#     data = "helloww mi name is Alex"
-
-#     # insight
-#     insight = "use a very slang or informal language"
-
-#     # prompt
-#     prompt = prompts.Insight(data, insight)
-
-#     # completion
-#     output = completion_from_messages(prompt, api_key=config["OPENAI_API_KEY"])
-
-#     logging.info(f"output : {output}")
+    return response.choices[0].message.content
