@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "the-jalait-project"
+version = "0.1.0"
+description = "Just Another Learning AI Tool"
+authors = ["AlexGazagnes"]
+license = "GNU GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.12"
+pandas = "^2.1.4"
+fastapi = "^0.108.0"
+uvicorn = "^0.25.0"
+sqlalchemy = "^2.0.25"
+requests = "^2.31.0"
+openai = "^1.6.1"
+python-dotenv = "^1.0.0"
+pyscopg2 = "^66.0.2"
+httpx = "^0.26.0"
+pandarallel = "^1.6.5"
+transformers = "^4.36.2"
+pytest = "^7.4.4"
+tensorflow = ">=2.0"
+pytube = "^15.0.0"
+youtube-transcript-api = "^0.6.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+black = {extras = ["jupyter"], version = "^23.12.1"}
+coverage = "^7.4.0"
+mypy = "^1.8.0"
+ipython = "^8.20.0"
+jupyter = "^1.0.0"
+notebook = "^7.0.6"
+jupyterlab = "^4.0.10"
+jupytext = "^1.16.0"
+rich = "^13.7.0"
+click = "^8.1.7"
+pep8 = "^1.7.1"
+flake8 = "^7.0.0"
+ipywidgets = "^8.1.1"
+nbconvert = "^7.14.0"
+jupyter-contrib-nbextensions = "^0.7.0"
+ipykernel = "^6.28.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
