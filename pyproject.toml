@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "the-jalait-project"
-version = "0.1.0"
+version = "0.2.0"
 description = "Just Another Learning AI Tool"
 authors = ["AlexGazagnes"]
 license = "GNU GPLv3"
@@ -23,6 +23,7 @@ pytest = "^7.4.4"
 tensorflow = ">=2.0"
 pytube = "^15.0.0"
 youtube-transcript-api = "^0.6.2"
+streamlit = "^1.29.0"
 
 
 [tool.poetry.group.dev.dependencies]
