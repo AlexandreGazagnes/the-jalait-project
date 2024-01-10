@@ -55,3 +55,6 @@ class TestPredict:
         )
 
         logging.info(f"output : {output}")
+
+
+idea = "at the begining, i had started an simple learning AI bot, but with the time, and when the time was passing, i discover that i was coding a huge project"
