@@ -1,8 +1,14 @@
-def main():
-    """Main function"""
+"""
+# main stremalit app
+"""
 
-    pass
+import streamlit as st
+
+# import pandas as pd
 
 
-if __name__ == "__main__":
-    main()
+st.write(
+    """
+Hello World
+         """
+)
