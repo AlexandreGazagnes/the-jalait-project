@@ -61,25 +61,25 @@ def completion_from_messages(
     return output
 
 
-if __name__ == "__main__":
-    """ """
+# if __name__ == "__main__":
+#     """ """
 
-    # logging
-    logging.basicConfig(level=logging.INFO)
+#     # logging
+#     logging.basicConfig(level=logging.INFO)
 
-    # env
-    config = manage_env()
+#     # env
+#     config = manage_env()
 
-    # data
-    data = "helloww mi name is Alex"
+#     # data
+#     data = "helloww mi name is Alex"
 
-    # insight
-    insight = "use a very slang or informal language"
+#     # insight
+#     insight = "use a very slang or informal language"
 
-    # prompt
-    prompt = prompts.Insight(data, insight)
+#     # prompt
+#     prompt = prompts.Insight(data, insight)
 
-    # completion
-    output = completion_from_messages(prompt, api_key=config["OPENAI_API_KEY"])
+#     # completion
+#     output = completion_from_messages(prompt, api_key=config["OPENAI_API_KEY"])
 
-    logging.info(f"output : {output}")
+#     logging.info(f"output : {output}")
