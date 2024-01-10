@@ -28,6 +28,7 @@ class Jalait:
         self.fix_text = fix_text
         self.grammar = grammar
         self.audio = audio
+        self.idioms = False
 
     def run(self):
         # env
@@ -36,9 +37,11 @@ class Jalait:
         # insight
         insight = ""
         if self.lang_level != "-":
-            insight += f"Use a {self.lang_level} level of language. "
+            insight += f"Use a {self.lang_level} level of language. \n"
         if self.lang_country != "-":
-            insight += f"Use a {self.lang_country} english vocabulary/style."
+            insight += f"Use a {self.lang_country} english vocabulary/style. \n"
+        if self.idioms:
+            insight += f"Do not hesitate to use specific {self.lang_country} idioms, in accordance to the {self.lang_level} level of language expected. \n"
 
         # prompt
         prompt = Prompts.Insight(self.input_text, insight)
