@@ -6,7 +6,9 @@ import os
 import logging
 import time
 
-import openai
+from openai import OpenAI
+
+client = OpenAI()
 import pandas as pd
 
 from jalait.prompts import prompts
@@ -49,12 +51,10 @@ def completion_from_messages(
         )
 
     # request
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        api_key=api_key,
-    )
+    response = client.chat.completions.create(model=model,
+    messages=messages,
+    temperature=temperature,
+    api_key=api_key)
 
     output = response.choices[0].message["content"]
 
