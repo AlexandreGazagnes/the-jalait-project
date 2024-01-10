@@ -4,6 +4,10 @@ import logging
 
 import sys
 
+from jalait.predict import completion_from_messages
+from jalait.env import manage_env
+from jalait.prompts import *
+
 
 class Jalait:
     """ """
@@ -26,4 +30,22 @@ class Jalait:
         self.audio = audio
 
     def run(self):
-        return """😠😠😠 Not implemented yet 😠😠😠"""
+        # env
+        config = manage_env()
+
+        # insight
+        insight = ""
+        if self.lang_level != "-":
+            insight += f"Use a {self.lang_level} level of language. "
+        if self.lang_country != "-":
+            insight += f"Use a {self.lang_country} english vocabulary/style."
+
+        # prompt
+        prompt = Prompts.Insight(self.input_text, insight)
+
+        # completion
+        output = completion_from_messages(
+            prompt.dictize(),
+            api_key=config["OPENAI_API_KEY"],
+        )
+        return output
