@@ -16,3 +16,7 @@ Core features are :
 - Jalait is able to develop a long term relationship with you, and adapt to your langauge needs
 
 **Any references to Jarvis is entirely accidental*
+
+## Access
+
+Please visit the [Jalait Project](https://jalait.streamlit.app/) website for more information.
