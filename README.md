@@ -17,6 +17,6 @@ Core features are :
 
 **Any references to Jarvis is entirely accidental*
 
-## ACCESS
+## Access
 
 Please visit the [Jalait Project](https://jalait.streamlit.app/) website for more information.
